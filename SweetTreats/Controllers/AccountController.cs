@@ -66,7 +66,7 @@ namespace SweetTreats.Controllers
     [HttpPost]
     public async Task<ActionResult> LogOff()
     {
-      await _signInManager.SignOutAsync();
+      await _signInManager.SignOutAsync();  // signOutAsync = built in method
       return RedirectToAction("Index");
     }
   }
