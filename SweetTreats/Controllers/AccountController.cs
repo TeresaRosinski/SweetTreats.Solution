@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using ToDoList.Models;
-using System.Threading.Tasks;
+using SweetTreats.Models;
+using System.Threading.Tasks; // allows for async
 using SweetTreats.ViewModels;
 
 namespace SweetTreats.Controllers
@@ -9,10 +9,10 @@ namespace SweetTreats.Controllers
   public class AccountController : Controller
   {
     private readonly SweetTreatsContext _db;
-    private readonly UserManager<ApplicationUser> _userManager;
-    private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly UserManager<ApplicationUser> _userManager; //UserManager = Identity Service - helps manage saving and updating account info
+    private readonly SignInManager<ApplicationUser> _signInManager; // SignIn Manager = Identity Service - allows users to log-in
 
-    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, SweetTreatsContext db)
+    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, SweetTreatsContext db) //Dependency Injection
     {
       _userManager = userManager;
       _signInManager = signInManager;
