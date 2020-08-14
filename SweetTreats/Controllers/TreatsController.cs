@@ -27,8 +27,8 @@ namespace SweetTreats.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      var userItems = _db.Items.Where(entry => entry.User.Id == currentUser.Id);
-      return View(userItems);
+      var userTreats = _db.Treats.Where(entry => entry.User.Id == currentUser.Id);
+      return View(userTreats);
     }
 
     public ActionResult Create()
@@ -43,7 +43,7 @@ namespace SweetTreats.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      item.User = currentUser;
+      treat.User = currentUser;
       _db.Treats.Add(treat);
       if (FlavorId != 0)
       {
@@ -66,7 +66,7 @@ namespace SweetTreats.Controllers
     {
       var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "FlavorName");
-      return View(thisFlavor);
+      return View(thisTreat);
     }
 
     [HttpPost]

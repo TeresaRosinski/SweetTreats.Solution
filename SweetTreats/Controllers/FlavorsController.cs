@@ -12,9 +12,9 @@ using System.Security.Claims;
 namespace SweetTreats.Controllers
 {
   [Authorize]
-  public class SweetTreatsController : Controller
+  public class FlavorsController : Controller
   {
-    private readonly SweetTreatContext _db;
+    private readonly SweetTreatsContext _db;
     private readonly UserManager<ApplicationUser> _userManager; 
     public FlavorsController(UserManager<ApplicationUser> userManager, SweetTreatsContext db)
     {
@@ -26,12 +26,12 @@ namespace SweetTreats.Controllers
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
       var userFlavors = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id);
-      return View(userItems);
+      return View(userFlavors);
     }
 
     public ActionResult Create()
     {
-      ViewBag.TreatId = new SelectList(_db.Treatss, "TreatId", "TreatName");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
       return View();
     }
 
@@ -62,7 +62,7 @@ namespace SweetTreats.Controllers
     public ActionResult Edit(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavors => flavors.FlavorId == id);
-      ViewBag.TreatId = new SelectList(_db.Treatss, "TreatId", "TreatName");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
       return View(thisFlavor);
     }
 
