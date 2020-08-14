@@ -1,0 +1,6 @@
+/Users/teresarosinski/Desktop/SweetTreats.Solution/SweetTreats/obj/Debug/netcoreapp2.2/SweetTreats.csprojAssemblyReference.cache
+/Users/teresarosinski/Desktop/SweetTreats.Solution/SweetTreats/obj/Debug/netcoreapp2.2/SweetTreats.csproj.CoreCompileInputs.cache
+/Users/teresarosinski/Desktop/SweetTreats.Solution/SweetTreats/obj/Debug/netcoreapp2.2/SweetTreats.RazorAssemblyInfo.cache
+/Users/teresarosinski/Desktop/SweetTreats.Solution/SweetTreats/obj/Debug/netcoreapp2.2/SweetTreats.RazorAssemblyInfo.cs
+/Users/teresarosinski/Desktop/SweetTreats.Solution/SweetTreats/obj/Debug/netcoreapp2.2/SweetTreats.AssemblyInfoInputs.cache
+/Users/teresarosinski/Desktop/SweetTreats.Solution/SweetTreats/obj/Debug/netcoreapp2.2/SweetTreats.AssemblyInfo.cs
