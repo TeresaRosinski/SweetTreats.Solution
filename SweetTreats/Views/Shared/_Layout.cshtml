@@ -36,14 +36,21 @@
         <a class="nav-link" href="/account/login">Log-in</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/account/register">Log-out</a>
+        @using (Html.BeginForm("LogOff", "Account"))
+        {
+        <input type="submit" class="btn" value="Log out" />
+        }
       </li>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+  @if (User.Identity.IsAuthenticated)
+  {
+    <li class="nav-item">
+        <span class="navbar-text">Hello @User.Identity.Name!</span>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-area="MicrosoftIdentity" asp-controller="AccountController" asp-action="LogOff">Log Off</a>
+    </li>
+  }
+</ul>
   </div>
 </nav>
     </header>

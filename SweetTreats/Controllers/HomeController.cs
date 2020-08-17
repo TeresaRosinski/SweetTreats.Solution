@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SweetTreats.Controllers
 {
+    
     public class HomeController : Controller
     {
         public IActionResult Index()

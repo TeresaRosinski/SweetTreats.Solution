@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 namespace SweetTreats.Controllers
 {
-  [Authorize] 
+  
   public class TreatsController : Controller
   {
     private readonly SweetTreatsContext _db;
@@ -30,7 +30,7 @@ namespace SweetTreats.Controllers
       var userTreats = _db.Treats.Where(entry => entry.User.Id == currentUser.Id);
       return View(userTreats);
     }
-
+[Authorize] 
     public ActionResult Create()
     {
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "FlavorName");
