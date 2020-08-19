@@ -63,10 +63,6 @@ namespace SweetTreats.Controllers
       }
     }
 
-     public ActionResult LogOff()
-    {
-      return View();
-    }
 
     [HttpPost]
     public async Task<ActionResult> LogOff()

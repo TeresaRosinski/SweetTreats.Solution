@@ -1937,11 +1937,6 @@
       "FilePath": "/Users/teresarosinski/Desktop/SweetTreats.Solution/SweetTreats/Views/Account/Index.cshtml",
       "TargetPath": "Views\\Account\\Index.cshtml",
       "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/teresarosinski/Desktop/SweetTreats.Solution/SweetTreats/Views/Account/LogOff.cshtml",
-      "TargetPath": "Views\\Account\\LogOff.cshtml",
-      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

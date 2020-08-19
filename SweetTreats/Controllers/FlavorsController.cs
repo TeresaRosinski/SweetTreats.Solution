@@ -11,16 +11,18 @@ using System.Security.Claims;
 
 namespace SweetTreats.Controllers
 {
-  [Authorize]
+ [Authorize]
   public class FlavorsController : Controller
   {
     private readonly SweetTreatsContext _db;
     private readonly UserManager<ApplicationUser> _userManager; 
+    
     public FlavorsController(UserManager<ApplicationUser> userManager, SweetTreatsContext db)
     {
       _userManager = userManager;
       _db = db;
     }
+
     public async Task<ActionResult> Index()
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -84,7 +86,7 @@ namespace SweetTreats.Controllers
       ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
       return View(thisFlavor);
     }
-
+[Authorize]
     [HttpPost]
     public ActionResult AddTreat(Flavor flavor, int TreatId)
     {
